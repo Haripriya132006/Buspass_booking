@@ -40,8 +40,9 @@ public class BookingService {
             System.out.println("Monthly enter no.of.months");
             months=sc.nextInt();
         }
-
-        bookings.add(new BookingModel(generate_pass_id(),issue_date, calculate_expiry_date(issue_date,months), rs.get_current_user().getUserId(), route,calculate_price(months,route)));
+        BookingModel booking=new BookingModel(generate_pass_id(),issue_date, calculate_expiry_date(issue_date,months), rs.get_current_user().getUserId(), route,calculate_price(months,route));
+        bookings.add(booking);
         System.out.println("Booked successfully");
+        booking.get_details();
     }
 }

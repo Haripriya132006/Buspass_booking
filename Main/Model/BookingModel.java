@@ -1,6 +1,7 @@
 package Main.Model;
 
 import java.time.LocalDate;
+import Main.Service.UserService;
 
 public class BookingModel {
     private String pass_id;
@@ -70,6 +71,14 @@ public class BookingModel {
 
     public void setTotal_price(float total_price) {
         this.total_price = total_price;
+    }
+
+    public void get_details(){
+        
+        System.out.println("User:" + UserService.get_username_from_id(getUser_id()));
+        System.out.println("Route "+getRoute());
+        System.out.println("Issue Date "+getIssue_date());
+        System.out.println("Expire Date "+getExpiry_date());
     }
     
 }

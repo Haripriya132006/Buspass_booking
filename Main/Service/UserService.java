@@ -6,6 +6,15 @@ public class UserService {
     public static List<UserModel> users=new ArrayList<>();
     static BusService bs=new BusService();
 
+    public static String get_username_from_id(String user_id){
+        for(UserModel user:users){
+            if(user.getUserId().equalsIgnoreCase(user_id)){
+                return user.getUser_name();
+            }
+        }
+        return null;
+    }
+
     public static void create_default_users(){
         users.add(new UserModel("U1","ts",19,"ts@gmail.com"));  
         users.add(new UserModel("U2","harry",40,"harry@gmail.com"));  
